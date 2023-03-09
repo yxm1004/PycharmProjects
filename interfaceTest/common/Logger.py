@@ -2,7 +2,7 @@ from datetime import datetime
 import logging
 import os
 
-import readConfig
+from interfaceTest.readConfig import ReadConfig as readConfig
 
 
 class Logger:
