@@ -1,6 +1,14 @@
+from datetime import datetime
+import os
 import unittest
 from XTestRunner import HTMLTestRunner
 
+from interfaceTest import readConfig
+
+resultPath = os.path.join(readConfig.proDir, "result")
+resultPath = os.path.join(resultPath, str(datetime.now().strftime("%Y%m%d%H%M%S")))
+
+resultPath = os.path.join(resultPath, "test_result.html")
 
 class TestDemo(unittest.TestCase):
     """测试用例说明"""
@@ -31,13 +39,13 @@ if __name__ == '__main__':
         TestDemo("test_fail"),
         TestDemo("test_error")
     ])
-
-    with(open('./result.html', 'wb')) as fp:
-        runner = HTMLTestRunner(
-            stream=fp,
-            title='<project name>test report',
-            description='describe: ... ',
-            language='en',
-            rerun=3
-        )
-        runner.run(suit)
+    fp = open(resultPath, 'wb')
+    print("4444444444444444444444",fp)
+    runner = HTMLTestRunner(
+        stream=fp,
+        title='<project name>test report',
+        description='describe: ... ',
+        language='en',
+        rerun=3
+    )
+    runner.run(suit)
