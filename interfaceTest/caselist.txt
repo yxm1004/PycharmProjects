@@ -1,5 +1,3 @@
-user/testlogin
-mycase/testcase1
-mycase/testprojectcreat
-mycase/testprojectquery
+mycase/testloginApi
+mycase/testprojectcreatApi
 #user/test2

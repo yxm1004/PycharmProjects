@@ -7,6 +7,9 @@ class testprojectcreat(unittest.TestCase ):
         self.pc= projectcreatApi()
     #编写创建项目用例
     def test_post_projectcreat(self):
+        """
+        创建项目
+        """
         #创建对象方法创建项目简称,使用时间戳作为项目简称创建项目
         abbreviation=time.strftime("%Y%m%d%H%M%S", time.localtime())
         rs=self.pc.projectcreat(abbreviation)

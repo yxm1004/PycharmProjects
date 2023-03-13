@@ -13,6 +13,9 @@ class testlogin(unittest.TestCase):
         self.loginApi = loginApi()
     #编写测试用力和断言
     def test_post_login(self):
+        """
+        登录case
+        """
         response = self.loginApi.login()
         #打印token
         if response.status_code == 200:

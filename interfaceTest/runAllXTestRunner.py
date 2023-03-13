@@ -3,12 +3,12 @@ from datetime import datetime
 import os
 import readConfig
 import unittest
-from common.Logger import Logger
 from XTestRunner import HTMLTestRunner
+from common.Logger import Logger
 
 # 日志处理
 
-# logger = Logger()
+logger = Logger()
 resultPath = os.path.join(readConfig.proDir, "result")
 resultPath = os.path.join(resultPath, str(datetime.now().strftime("%Y%m%d%H%M%S")))
 
@@ -54,19 +54,19 @@ class runAll:
         try:
             suit = self.set_case_suite()
             if suit is not None:
-                # logger.info("********TEST START********")
+                logger.info("********TEST START********")
                 fp = open("test_result.html", 'wb')
                 runner = HTMLTestRunner(stream=fp, title='测试报告', description="测试描述",language="zh-CN")
                 runner.run(suit)
             else:
                 print("异常")
-                # logger.info("Have no case to test.")
+                logger.info("Have no case to test.")
         except Exception as ex:
             print("错误",ex)
             # logger.error(str(ex))
         finally:
             pass
-            # logger.info("*********TEST END*********")
+            logger.info("*********TEST END*********")
             # # send test report by email
             #
             # if int(on_off) == 0:
