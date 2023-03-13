@@ -1,3 +1,5 @@
 mycase/testloginApi
 mycase/testprojectcreatApi
-#user/test2
+user/test2
+user/testlogin
+
